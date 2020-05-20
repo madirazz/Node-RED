@@ -1,0 +1,82 @@
+[
+    {
+        "id": "142d5654.77d95a",
+        "type": "tab",
+        "label": "Activity4",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "fb1e8ee2.be9b1",
+        "type": "inject",
+        "z": "142d5654.77d95a",
+        "name": "Inject",
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "x": 270,
+        "y": 200,
+        "wires": [
+            [
+                "90fe6af8.777f38"
+            ]
+        ]
+    },
+    {
+        "id": "af3a006b.88328",
+        "type": "csv",
+        "z": "142d5654.77d95a",
+        "name": "",
+        "sep": ",",
+        "hdrin": true,
+        "hdrout": false,
+        "multi": "mult",
+        "ret": "\\n",
+        "temp": "",
+        "skip": "1",
+        "x": 570,
+        "y": 200,
+        "wires": [
+            [
+                "43c02230.854d0c"
+            ]
+        ]
+    },
+    {
+        "id": "43c02230.854d0c",
+        "type": "debug",
+        "z": "142d5654.77d95a",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "x": 730,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "90fe6af8.777f38",
+        "type": "template",
+        "z": "142d5654.77d95a",
+        "name": "CSV data",
+        "field": "payload",
+        "fieldType": "msg",
+        "format": "handlebars",
+        "syntax": "mustache",
+        "template": "# This is some random data\na,b,c\n80,18,2\n52,36,10\n91,18,61\n32,47,65",
+        "output": "str",
+        "x": 420,
+        "y": 200,
+        "wires": [
+            [
+                "af3a006b.88328"
+            ]
+        ]
+    }
+]
